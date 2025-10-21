@@ -16,7 +16,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(tera.clone())) // share tera with handlers
-            .service(fs::Files::new("/static", "static").show_files_listing()) // Serve static files
+            .service(fs::Files::new("/static", "static").show_files_listing()) // serve static files
             .configure(routes::init) // Load all routes
     })
     .bind(("127.0.0.1", 8080))?
