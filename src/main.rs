@@ -8,7 +8,7 @@ use tera::Tera;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    // initialize Tera (template engine)
+    // initialize tera (template engine)
     let tera = Tera::new("templates/**/*").expect("Error loading templates");
 
     println!("🚀 Server running at http://127.0.0.1:8080");
