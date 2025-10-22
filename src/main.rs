@@ -10,7 +10,6 @@ use tera::Tera; //tera imports used for templating html files
 async fn main() -> std::io::Result<()> {
     // initializing tera
     let tera = Tera::new("templates/**/*").expect("Error loading templates");
-
     println!("Server running at http://127.0.0.1:8080");
 
     HttpServer::new(move || {
