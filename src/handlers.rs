@@ -16,6 +16,8 @@ pub async fn index(tmpl: web::Data<Tera>) -> impl Responder {
     }
 }
 
+//ABOUT THE APPLICATION
+
 pub async fn about(tmpl: web::Data<Tera>) -> impl Responder {
     let ctx = Context::new();
 
@@ -25,6 +27,7 @@ pub async fn about(tmpl: web::Data<Tera>) -> impl Responder {
                         .body(format!("Template error: {}", err)),
     }
 }
+
 
 
 
