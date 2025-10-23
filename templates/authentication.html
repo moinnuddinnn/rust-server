@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Authentication</title>
+</head>
+<body>
+
+  <!-- SIGN IN -->
+  <h2>Sign In</h2>
+  <form action="/login" method="post">
+    <label for="signin-email">Email</label><br />
+    <input type="email" id="signin-email" name="email" required /><br /><br />
+
+    <label for="signin-password">Password</label><br />
+    <input type="password" id="signin-password" name="password" required /><br /><br />
+
+    <button type="submit">Sign In</button>
+  </form>
+
+  <p>
+    <!-- Link for "Sign in with Google" (points to your OAuth start route) -->
+    <a href="/auth/google/login">Sign in with Google</a>
+  </p>
+
+  <hr />
+
+  <!-- SIGN UP -->
+  <h2>Sign Up</h2>
+  <form action="/signup" method="post">
+    <label for="signup-name">Full name</label><br />
+    <input type="text" id="signup-name" name="name" required /><br /><br />
+
+    <label for="signup-email">Email</label><br />
+    <input type="email" id="signup-email" name="email" required /><br /><br />
+
+    <label for="signup-password">Password</label><br />
+    <input type="password" id="signup-password" name="password" required /><br /><br />
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <hr />
+
+  <!-- FORGOT PASSWORD -->
+  <h2>Forgot Password</h2>
+  <form action="/forgot-password" method="post">
+    <label for="forgot-email">Email</label><br />
+    <input type="email" id="forgot-email" name="email" required /><br /><br />
+    <button type="submit">Reset Password</button>
+  </form>
+
+  <hr />
+
+  <!-- OPTIONAL: simple display-only text about endpoints -->
+  <!--
+    POST /login           -> handle sign-in (email/password)
+    POST /signup          -> create new account
+    POST /forgot-password -> send reset link or instructions
+    GET  /auth/google/login -> start Google OAuth (redirect to Google)
+    GET  /auth/google/callback -> OAuth callback (handle code/token exchange)
+  -->
+
+</body>
+</html>
