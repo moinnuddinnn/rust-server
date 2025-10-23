@@ -3,6 +3,8 @@
 use actix_web::{web, HttpResponse, Responder};
 use tera::{Context, Tera};
 
+//INDEX/HOME PAGE
+
 pub async fn index(tmpl: web::Data<Tera>) -> impl Responder {
     let mut ctx = Context::new();
     ctx.insert("name", "Rust Developer");
@@ -23,4 +25,5 @@ pub async fn about(tmpl: web::Data<Tera>) -> impl Responder {
                         .body(format!("Template error: {}", err)),
     }
 }
+
 
