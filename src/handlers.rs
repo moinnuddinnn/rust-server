@@ -1,3 +1,5 @@
+//HANDLERS !! DO NOT REMOVE !!
+
 use actix_web::{web, HttpResponse, Responder};
 use tera::{Context, Tera};
 
@@ -21,3 +23,4 @@ pub async fn about(tmpl: web::Data<Tera>) -> impl Responder {
                         .body(format!("Template error: {}", err)),
     }
 }
+
