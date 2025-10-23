@@ -1,6 +1,6 @@
 //HANDLERS !! DO NOT REMOVE !!
 
-use actix_web::{web, HttpResponse, Responder};
+use actix_web::{web, HttpResponse, Responder}; //HTTP RESPONSES
 use tera::{Context, Tera};
 
 //INDEX/HOME PAGE
@@ -25,5 +25,6 @@ pub async fn about(tmpl: web::Data<Tera>) -> impl Responder {
                         .body(format!("Template error: {}", err)),
     }
 }
+
 
 
