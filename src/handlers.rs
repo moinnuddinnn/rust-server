@@ -28,6 +28,30 @@ pub async fn about(tmpl: web::Data<Tera>) -> impl Responder {
     }
 }
 
+//INSTALLATIONS
+
+pub async fn installation(tmpl: web::Data<Tera>) -> impl Responder {
+    let ctx = Context::new();
+
+    match tmpl.render("installation.html", &ctx) {
+        Ok(html) => HttpResponse::Ok().content_type("text/html").body(html),
+        Err(err) => HttpResponse::InternalServerError()
+                        .body(format!("Template error: {}", err)),
+    }
+}
+
+//AUTHENTICATION
+
+pub async fn authentication(tmpl: web::Data<Tera>) -> impl Responder {
+    let ctx = Context::new();
+
+    match tmpl.render("authentication.html", &ctx) {
+        Ok(html) => HttpResponse::Ok().content_type("text/html").body(html),
+        Err(err) => HttpResponse::InternalServerError()
+                        .body(format!("Template error: {}", err)),
+    }
+}
+
 
 
 
