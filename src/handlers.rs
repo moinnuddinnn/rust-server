@@ -5,7 +5,7 @@ use tera::{Context, Tera};
 
 //INDEX/HOME PAGE
 
-////hereeecjdbh
+////asynchorous functions
 
 pub async fn index(tmpl: web::Data<Tera>) -> impl Responder {
     let mut ctx = Context::new();
@@ -53,6 +53,7 @@ pub async fn authentication(tmpl: web::Data<Tera>) -> impl Responder {
                         .body(format!("Template error: {}", err)),
     }
 }
+
 
 
 
