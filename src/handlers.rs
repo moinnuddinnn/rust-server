@@ -42,7 +42,7 @@ pub async fn installation(tmpl: web::Data<Tera>) -> impl Responder {
     }
 }
 
-//AUTHENTICATION
+//AUTHENTICATION PART
 
 pub async fn authentication(tmpl: web::Data<Tera>) -> impl Responder {
     let ctx = Context::new();
@@ -53,6 +53,7 @@ pub async fn authentication(tmpl: web::Data<Tera>) -> impl Responder {
                         .body(format!("Template error: {}", err)),
     }
 }
+
 
 
 
