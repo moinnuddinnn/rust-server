@@ -8,7 +8,7 @@ use tera::{Context, Tera};
 ////asynchorous functions
 
 pub async fn index(tmpl: web::Data<Tera>) -> impl Responder {
-    let mut ctx = Context::new();
+    let mut ctx = Context::new();//
     ctx.insert("name", "Rust Developer");
 
     match tmpl.render("index.html", &ctx) {
@@ -53,6 +53,7 @@ pub async fn authentication(tmpl: web::Data<Tera>) -> impl Responder {
                         .body(format!("Template error: {}", err)),
     }
 }
+
 
 
 
